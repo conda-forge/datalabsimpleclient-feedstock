@@ -10,7 +10,7 @@ source:
   sha256: 794fc97dc7784f04b369928912efbd6f4f2ed5b544ef18ff2814066716a71ae0
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: {{ name|lower }}
@@ -21,16 +21,17 @@ outputs:
         - cdlclient-tests = cdlclient.tests:run
     requirements:
       host:
-        - python >=3.8
+        - python {{ python_min }}
         - setuptools
         - pip
       run:
-        - python >=3.8
+        - python >={{ python_min }}
         - numpy >=1.21
         - guidata >=3.5
     test:
       requires:
         - pip
+        - python {{ python_min }}
       imports:
         - cdlclient
       commands:
@@ -42,6 +43,8 @@ outputs:
       run:
         - {{ pin_subpackage(name|lower, exact=True) }}
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - cdlclient
 

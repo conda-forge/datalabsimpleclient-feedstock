@@ -1,5 +1,5 @@
 {% set name = "DataLabSimpleClient" %}
-{% set version = "0.10.1" %}
+{% set version = "0.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/cdlclient/cdlclient-{{ version }}.tar.gz
-  sha256: 794fc97dc7784f04b369928912efbd6f4f2ed5b544ef18ff2814066716a71ae0
+  sha256: e203c703757b278965481883c801e2b49246e2cb9826d7f0e42ae4472a4a8599
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: {{ name|lower }}
